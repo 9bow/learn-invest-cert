@@ -30,7 +30,23 @@ export default function Quiz({ section }: QuizProps) {
   }, [section]);
 
   if (questions.length === 0) {
-    return <p style={{ padding: '1rem', color: 'var(--sl-color-gray-3)' }}>퀴즈를 불러오는 중...</p>;
+    return (
+      <div style={{ padding: '1rem', color: 'var(--sl-color-gray-3)' }}>
+        <p>퀴즈를 불러오는 중...</p>
+        <button
+          onClick={() => {
+            const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+            fetch(`${base}/data/quiz/${section}.json`)
+              .then((res) => res.json())
+              .then((data: QuizQuestion[]) => setQuestions(data))
+              .catch(() => setQuestions([]));
+          }}
+          style={{ marginTop: '0.5rem', padding: '0.25rem 0.75rem', background: 'var(--sl-color-gray-5)', color: 'var(--sl-color-white)', border: 'none', borderRadius: '0.25rem', cursor: 'pointer', fontSize: '0.875rem' }}
+        >
+          새로고침
+        </button>
+      </div>
+    );
   }
 
   const q = questions[current];

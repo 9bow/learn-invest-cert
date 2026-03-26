@@ -11,42 +11,20 @@ hero:
       variant: primary
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 ## 커리큘럼 개요
 
 <CardGrid>
-  <Card title="시험 안내 및 학습 전략 (2시간)" icon="open-book">
-    시험 구조, 과목별 출제 비중, 효율적인 학습 전략을 안내합니다.
-  </Card>
-  <Card title="직무윤리 (3시간)" icon="heart">
-    금융투자 전문인력의 직무윤리와 행위 규범을 학습합니다.
-  </Card>
-  <Card title="금융투자 관련 법규 (5시간)" icon="document">
-    자본시장법, 금융투자업 규정 등 핵심 법규를 정리합니다.
-  </Card>
-  <Card title="주식운용 전략 (6시간)" icon="rocket">
-    주식 가치평가, 기본적/기술적 분석, 포트폴리오 운용 전략을 다룹니다.
-  </Card>
-  <Card title="채권운용 전략 (6시간)" icon="setting">
-    채권 가격결정, 듀레이션, 수익률곡선 전략 등을 학습합니다.
-  </Card>
-  <Card title="파생상품운용 전략 (5시간)" icon="puzzle">
-    선물, 옵션, 스왑 등 파생상품의 가격결정과 운용 전략을 다룹니다.
-  </Card>
-  <Card title="거시경제 및 분산투자 (5시간)" icon="sun">
-    경기변동, 통화정책, 자산배분 이론과 분산투자 전략을 학습합니다.
-  </Card>
-  <Card title="대안투자 및 해외증권투자 (4시간)" icon="star">
-    PEF, 헤지펀드, 부동산, 해외증권투자 전략을 다룹니다.
-  </Card>
-  <Card title="투자분석 및 리스크관리 (5시간)" icon="laptop">
-    투자분석기법과 VaR 등 리스크관리 방법론을 학습합니다.
-  </Card>
-  <Card title="금융상품 및 세제 (5시간)" icon="pencil">
-    금융상품 유형별 특징과 투자 관련 세제를 정리합니다.
-  </Card>
-  <Card title="실전 모의고사 및 기출문제 (4시간)" icon="approve-check-circle">
-    과목별/회차별 모의고사와 기출 유형 문제를 풀어봅니다.
-  </Card>
+  <LinkCard title="시험 안내 및 학습 전략 (2시간)" description="시험 구조, 과목별 출제 비중, 효율적인 학습 전략을 안내합니다." href="/learn-invest-cert/01-exam-guide/overview/" />
+  <LinkCard title="직무윤리 (3시간)" description="금융투자 전문인력의 직무윤리와 행위 규범을 학습합니다." href="/learn-invest-cert/02-ethics/financial-professional-ethics/" />
+  <LinkCard title="금융투자 관련 법규 (5시간)" description="자본시장법, 금융투자업 규정 등 핵심 법규를 정리합니다." href="/learn-invest-cert/03-regulations/capital-market-act/" />
+  <LinkCard title="주식운용 전략 (6시간)" description="주식 가치평가, 기본적/기술적 분석, 포트폴리오 운용 전략을 다룹니다." href="/learn-invest-cert/04-equity/stock-valuation/" />
+  <LinkCard title="채권운용 전략 (6시간)" description="채권 가격결정, 듀레이션, 수익률곡선 전략 등을 학습합니다." href="/learn-invest-cert/05-bond/bond-basics/" />
+  <LinkCard title="파생상품운용 전략 (5시간)" description="선물, 옵션, 스왑 등 파생상품의 가격결정과 운용 전략을 다룹니다." href="/learn-invest-cert/06-derivatives/futures-basics/" />
+  <LinkCard title="거시경제 및 분산투자 (5시간)" description="경기변동, 통화정책, 자산배분 이론과 분산투자 전략을 학습합니다." href="/learn-invest-cert/07-macro-diversification/macroeconomics/" />
+  <LinkCard title="대안투자 및 해외증권투자 (4시간)" description="PEF, 헤지펀드, 부동산, 해외증권투자 전략을 다룹니다." href="/learn-invest-cert/08-alternative-overseas/private-equity/" />
+  <LinkCard title="투자분석 및 리스크관리 (5시간)" description="투자분석기법과 VaR 등 리스크관리 방법론을 학습합니다." href="/learn-invest-cert/09-analysis-risk/quantitative-analysis/" />
+  <LinkCard title="금융상품 및 세제 (5시간)" description="금융상품 유형별 특징과 투자 관련 세제를 정리합니다." href="/learn-invest-cert/10-products-tax/deposit-products/" />
+  <LinkCard title="실전 모의고사 및 기출문제 (4시간)" description="과목별/회차별 모의고사와 기출 유형 문제를 풀어봅니다." href="/learn-invest-cert/11-mock-exams/mock-exam-1/" />
 </CardGrid>
