@@ -29,6 +29,13 @@ export default defineConfig({
         { label: '금융상품 및 세제', autogenerate: { directory: '10-products-tax' } },
         { label: '실전 모의고사 및 기출문제', autogenerate: { directory: '11-mock-exams' } },
       ],
+      social: [
+        {
+          icon: 'github',
+          label: 'GitHub',
+          href: 'https://github.com/9bow/learn-invest-cert',
+        },
+      ],
       customCss: ['./src/styles/custom.css'],
     }),
     react(),
