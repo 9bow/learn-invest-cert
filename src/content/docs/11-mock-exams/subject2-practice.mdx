@@ -1,0 +1,57 @@
+---
+title: 2과목 집중 문제풀이
+description: 2과목(투자운용전략 II·투자분석) 집중 연습 문제 60문항입니다. 주식·채권·파생상품·대안투자·해외투자·성과측정·리스크관리를 다룹니다.
+sidebar:
+  order: 5
+learning_objectives:
+  - DDM, CAPM, APT 등 주식 가치평가 모형을 계산 문제로 적용할 수 있다
+  - 듀레이션, 볼록성, 면역전략 등 채권 분석 기법을 정확히 이해할 수 있다
+  - 선물·옵션 이론가격 계산과 풋-콜 패리티를 실전에 적용할 수 있다
+  - 샤프비율, 트레이너비율, 젠센의 알파, VaR 등 성과측정 지표를 계산할 수 있다
+  - 2과목 40점 이상(12문항 이상 정답) 합격 기준을 충족할 수 있다
+estimated_minutes: 75
+references:
+  - title: "금융투자협회 투자자산운용사 시험 안내"
+    url: "https://license.kofia.or.kr"
+    accessed: "2026-03-26"
+---
+
+## 2과목 핵심 요약
+
+### 주식 가치평가 핵심 공식
+
+$$\text{DDM(고든 모형)} = \frac{D_1}{k - g} = \frac{D_0(1+g)}{k - g}$$
+
+$$\text{CAPM} = R_f + \beta(R_m - R_f)$$
+
+$$\text{PEG} = \frac{PER}{\text{이익성장률}(\%)}$$
+
+### 채권 분석 핵심 공식
+
+$$\text{수정듀레이션} = \frac{\text{맥컬리 듀레이션}}{1 + y}$$
+
+$$\frac{\Delta P}{P} \approx -D^* \cdot \Delta y + \frac{1}{2} \cdot C \cdot (\Delta y)^2$$
+
+### 파생상품 핵심 공식
+
+$$\text{선물 이론가격} = S_0 \times (1 + r - d)^T$$
+
+$$\text{풋-콜 패리티: } C + PV(X) = P + S_0$$
+
+### 성과측정 핵심 공식
+
+$$\text{샤프비율} = \frac{R_p - R_f}{\sigma_p}$$
+
+$$\text{트레이너비율} = \frac{R_p - R_f}{\beta_p}$$
+
+$$\text{젠센의 알파} = R_p - [R_f + \beta_p(R_m - R_f)]$$
+
+$$\text{정규분포 VaR} = \mu - z \cdot \sigma$$
+
+---
+
+## 2과목 집중 문제 (60문항)
+
+import Quiz from '../../../components/learning/Quiz';
+
+<Quiz client:load section="subject2-intensive" />

@@ -1,0 +1,140 @@
+---
+title: 계량분석 기초
+description: 투자분석에 필요한 확률·통계 기초, 정규분포, 회귀분석, 결정계수, t-검정, 시계열분석 기초를 학습합니다.
+sidebar:
+  order: 1
+learning_objectives:
+  - 기대값, 분산, 공분산, 상관계수를 계산하고 해석할 수 있다
+  - 정규분포와 표준정규분포의 특성을 이해한다
+  - 단순·다중 회귀분석의 구조와 결정계수를 해석할 수 있다
+  - t-검정과 시계열분석의 기초 개념을 설명할 수 있다
+estimated_minutes: 60
+references:
+  - title: "금융투자협회 투자자산운용사 시험 안내"
+    url: "https://license.kofia.or.kr"
+    accessed: "2026-03-26"
+  - title: "Quantitative Methods - CFA Institute"
+    url: "https://www.cfainstitute.org/en/membership/professional-development/refresher-readings/quantitative-methods"
+    accessed: "2026-03-26"
+  - title: "Statistics for Finance - Investopedia"
+    url: "https://www.investopedia.com/terms/s/statistics.asp"
+    accessed: "2026-03-26"
+---
+
+## 확률과 통계 기초
+
+### 기대값 (Expected Value)
+
+확률변수 $X$ 의 **기대값** 은 가능한 결과에 확률을 가중하여 합산한 값이다.
+
+$$E(X) = \sum_{i} x_i \cdot P(x_i)$$
+
+연속형 자산 수익률의 경우 과거 관측치의 평균으로 추정한다.
+
+### 분산과 표준편차
+
+**분산(Variance)** 은 기대값 주변의 흩어짐 정도를 측정한다.
+
+$$\sigma^2 = E[(X - \mu)^2] = \sum_{i} (x_i - \mu)^2 \cdot P(x_i)$$
+
+**표준편차** $\sigma$ 는 분산의 제곱근이며, 원래 단위와 동일하여 해석이 용이하다. 투자에서는 수익률의 표준편차를 **위험(Risk)** 의 척도로 사용한다.
+
+### 공분산 (Covariance)
+
+두 자산 수익률의 **동조 방향성과 크기** 를 측정한다.
+
+$$Cov(R_A, R_B) = E[(R_A - \mu_A)(R_B - \mu_B)]$$
+
+- 양(+): 두 자산이 같은 방향으로 움직이는 경향
+- 음(-): 두 자산이 반대 방향으로 움직이는 경향
+- 0: 두 자산 간 선형 관계 없음
+
+### 상관계수 (Correlation Coefficient)
+
+공분산을 각 자산의 표준편차로 나누어 **표준화** 한 값이다.
+
+$$\rho_{AB} = \frac{Cov(R_A, R_B)}{\sigma_A \cdot \sigma_B}$$
+
+$\rho$ 의 범위는 $-1 \leq \rho \leq 1$ 이며, $\rho = -1$ 이면 완전 음의 상관, $\rho = 1$ 이면 완전 양의 상관이다. $\rho < 1$ 인 경우 분산투자로 포트폴리오 위험을 낮출 수 있다.
+
+---
+
+## 정규분포와 표준정규분포
+
+**정규분포(Normal Distribution)** 는 평균을 중심으로 좌우 대칭인 종 모양의 분포다. 수익률 분포를 정규분포로 가정하는 경우가 많다.
+
+$$f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
+
+**표준정규분포** 는 평균 0, 표준편차 1인 정규분포다. 임의의 정규분포를 표준화하면 표준정규분포를 따른다.
+
+$$Z = \frac{X - \mu}{\sigma}$$
+
+### 주요 확률 범위
+
+| 범위 | 포함 확률 |
+|------|---------|
+| $\mu \pm 1\sigma$ | 약 68.3% |
+| $\mu \pm 1.65\sigma$ | 약 90% (단측 5%) |
+| $\mu \pm 1.96\sigma$ | 약 95% |
+| $\mu \pm 2.58\sigma$ | 약 99% |
+
+VaR 계산 시 신뢰수준 95%는 $z = 1.65$, 99%는 $z = 2.33$ 을 사용한다.
+
+---
+
+## 회귀분석
+
+### 단순 회귀분석
+
+종속변수 $Y$ 를 하나의 독립변수 $X$ 로 설명하는 모형이다.
+
+$$Y_i = \alpha + \beta X_i + \epsilon_i$$
+
+- $\alpha$: 절편(상수항)
+- $\beta$: 기울기(독립변수 1단위 변화 시 종속변수 변화량)
+- $\epsilon_i$: 오차항
+
+금융에서는 주식 수익률($R_i$)을 시장수익률($R_m$)로 회귀하는 **CAPM 회귀** 가 대표적이다.
+
+$$R_i = \alpha_i + \beta_i R_m + \epsilon_i$$
+
+### 다중 회귀분석
+
+복수의 독립변수로 종속변수를 설명하는 모형이다.
+
+$$Y_i = \alpha + \beta_1 X_{1i} + \beta_2 X_{2i} + \cdots + \beta_k X_{ki} + \epsilon_i$$
+
+다중 회귀에서는 **다중공선성(Multicollinearity)** 문제(독립변수 간 높은 상관관계)에 주의해야 한다.
+
+---
+
+## 결정계수 (R²)
+
+**결정계수** 는 회귀모형이 종속변수의 변동을 얼마나 설명하는지 나타내는 지표다.
+
+$$R^2 = 1 - \frac{SSE}{SST} = \frac{SSR}{SST}$$
+
+- $SST$: 총 변동, $SSR$: 회귀로 설명된 변동, $SSE$: 잔차 변동
+- $0 \leq R^2 \leq 1$ 이며, 1에 가까울수록 모형 설명력이 높음
+- 단순 회귀에서 $R^2 = \rho^2$ (상관계수의 제곱)
+
+---
+
+## t-검정
+
+**t-검정** 은 표본에서 추정한 모수가 통계적으로 유의한지 검정하는 방법이다. 회귀계수가 0과 유의하게 다른지 검정할 때 사용한다.
+
+$$t = \frac{\hat{\beta} - 0}{SE(\hat{\beta})}$$
+
+$|t|$ 값이 임계값(자유도와 유의수준에 따라 결정)보다 크면 귀무가설(계수 = 0)을 기각한다. 실무에서는 **p-값** 이 0.05 미만이면 5% 수준에서 유의하다고 판단한다.
+
+---
+
+## 시계열분석 기초
+
+**시계열(Time Series)** 은 동일 변수를 시간 순서로 관측한 데이터다. 금융 데이터의 대부분이 시계열이다.
+
+- **정상성(Stationarity)**: 평균과 분산이 시간에 따라 변하지 않는 성질. 대부분의 통계 분석이 정상 시계열을 가정한다.
+- **단위근(Unit Root)**: 주가처럼 시간에 따라 추세가 있는 비정상 시계열. 차분(Differencing)으로 정상화할 수 있다.
+- **자기상관(Autocorrelation)**: 현재 값과 과거 값 간의 상관관계. 더빈-왓슨 검정으로 확인한다.
+- **이동평균(Moving Average)**: 일정 기간의 평균값을 시계열로 나타내어 추세를 파악하는 방법이다.

@@ -1,0 +1,77 @@
+---
+title: 주식운용 핵심 정리와 퀴즈
+description: 주식운용 전략 섹션의 핵심 공식, 주요 개념 비교표를 정리하고 실전 퀴즈로 학습 내용을 점검합니다.
+sidebar:
+  order: 6
+learning_objectives:
+  - 주식운용 전략의 핵심 공식을 빠르게 암기하고 적용할 수 있다
+  - DDM, PER, CAPM 등 주요 평가 모형의 차이와 적용 조건을 비교할 수 있다
+  - 퀴즈를 통해 시험 출제 유형과 오답 패턴을 파악할 수 있다
+estimated_minutes: 40
+references:
+  - title: "금융투자협회 투자자산운용사 시험 안내"
+    url: "https://license.kofia.or.kr"
+    accessed: "2026-03-26"
+  - title: "CFA Institute - Equity Investments"
+    url: "https://www.cfainstitute.org/en/membership/professional-development/refresher-readings/equity-valuation"
+    accessed: "2026-03-26"
+---
+
+## 핵심 공식 정리표
+
+| 공식 | 수식 | 비고 |
+|------|------|------|
+| **고든성장모형** | $P_0 = \dfrac{D_1}{r - g}$ | $r > g$ 조건 필수 |
+| **PER** | $\text{PER} = \dfrac{P}{\text{EPS}}$ | 업종 평균과 비교 |
+| **PBR** | $\text{PBR} = \dfrac{P}{\text{BPS}}$ | 1 미만이면 청산가치 이하 |
+| **ROE** | $\text{ROE} = \dfrac{\text{순이익}}{\text{자기자본}}$ | 듀폰 분해 가능 |
+| **지속가능 성장률** | $g^* = \text{ROE} \times b$ | $b$: 이익유보율 |
+| **CAPM** | $E(R_i) = R_f + \beta_i (E(R_m) - R_f)$ | 단일 팩터 모형 |
+| **트래킹에러** | $\text{TE} = \sigma(R_p - R_b)$ | 낮을수록 벤치마크 추적 정확 |
+| **정보비율** | $\text{IR} = \dfrac{\overline{R_p - R_b}}{\text{TE}}$ | 0.5 이상이면 우수 |
+| **RSI** | $\text{RSI} = 100 - \dfrac{100}{1+RS}$ | 70 이상: 과매수, 30 이하: 과매도 |
+
+---
+
+## 주요 개념 비교표
+
+### 가치평가 모형 비교
+
+| 모형 | 입력값 | 특징 | 한계 |
+|------|--------|------|------|
+| **DDM** | 배당, 성장률, 할인율 | 이론적으로 정밀 | 배당 미지급 기업 적용 불가 |
+| **PER 배수** | EPS, 업종 평균 PER | 직관적, 비교 용이 | 적자 기업 적용 불가 |
+| **PBR 배수** | BPS | 자산 집약 업종 적합 | 무형자산 미반영 |
+| **EV/EBITDA** | EBITDA, 순부채 | 자본구조 중립 | 설비투자 반영 안됨 |
+
+### 투자 스타일 비교
+
+| 스타일 | 핵심 지표 | 시장 국면 | 대표 리스크 |
+|--------|----------|----------|------------|
+| **가치** | 저PER, 저PBR | 경기 회복기 | 가치함정(Value Trap) |
+| **성장** | 높은 EPS 성장률 | 경기 확장기 | 고평가 리스크 |
+| **모멘텀** | 최근 12개월 수익률 | 추세 지속 국면 | 추세 반전 시 손실 |
+| **저변동성** | 베타, 표준편차 | 하락장 | 상승장 소외 가능성 |
+
+### 운용 방식 비교
+
+| 구분 | 적극적 | 소극적 | 스마트 베타 |
+|------|--------|--------|------------|
+| **목표** | 알파 창출 | 지수 추적 | 팩터 프리미엄 |
+| **비용** | 높음 | 낮음 | 중간 |
+| **TE** | 높음 | 낮음 | 중간 |
+
+---
+
+## 파마-프렌치 3팩터 요약
+
+$$E(R_i) - R_f = \beta_i (R_m - R_f) + s_i \cdot SMB + h_i \cdot HML$$
+
+- **SMB (Small Minus Big):** 소형주 초과수익 팩터
+- **HML (High Minus Low):** 가치주 초과수익 팩터 (고BPR - 저BPR)
+
+---
+
+import Quiz from '../../../components/learning/Quiz';
+
+<Quiz client:load section="04-equity" />
