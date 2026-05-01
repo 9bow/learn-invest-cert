@@ -11,6 +11,16 @@ export default defineConfig({
   base: '/learn-invest-cert',
   integrations: [
     starlight({
+      head: [
+        {
+          tag: 'script',
+          attrs: { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-P5PMGWJKNT' },
+        },
+        {
+          tag: 'script',
+          content: `window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-P5PMGWJKNT');`,
+        },
+      ],
       title: '투자자산운용사 완벽 가이드',
       defaultLocale: 'root',
       locales: {
