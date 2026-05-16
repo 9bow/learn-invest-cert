@@ -1,49 +1,49 @@
-# Starlight Starter Kit: Basics
+# 투자자산운용사 완벽 가이드
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+투자자산운용사 자격증 취득을 위한 한국어 종합 학습 사이트입니다. 시험 안내, 윤리, 법규, 주식·채권·파생상품 운용, 거시경제, 대안투자, 리스크관리, 금융상품과 세제, 모의고사를 한 흐름으로 정리합니다.
 
+## 대상
+
+- 투자자산운용사 시험을 준비하는 수험생
+- 금융투자 법규와 운용 전략을 과목별로 복습하려는 실무자
+- 개념 학습과 문제 풀이를 함께 진행하고 싶은 학습자
+
+## 구성
+
+- 11개 섹션
+- 60개 MDX 챕터
+- 15개 퀴즈 및 모의고사 JSON 데이터
+- 총 약 50시간 분량
+- Astro 6 + Starlight + React 기반
+- 수식 렌더링을 위한 KaTeX 설정 포함
+
+## 커리큘럼
+
+1. 시험 안내 및 학습 전략: 시험 구조, 과목별 비중, 학습 로드맵
+2. 직무윤리: 금융투자 전문인력의 윤리와 행위 기준
+3. 금융투자 관련 법규: 자본시장법, 금융투자업 규정, 협회 규정, 펀드 규제
+4. 주식운용 전략: 가치평가, 기본적 분석, DCF, 포트폴리오, 기술적 분석
+5. 채권운용 전략: 채권 기본, 가격, 수익률곡선, 듀레이션, 운용 전략
+6. 파생상품운용 전략: 선물, 옵션, 스왑, 가격결정, 헤지 전략
+7. 거시경제 및 분산투자: 경기, 통화정책, 자산배분, 국제 분산투자
+8. 대안투자 및 해외증권투자: PEF, 헤지펀드, 실물자산, 해외투자
+9. 투자분석 및 리스크관리: 계량 분석, 성과 평가, 리스크 유형과 VaR
+10. 금융상품 및 세제: 예금, 증권, 보험, 연금, 세제
+11. 실전 모의고사 및 기출문제: 과목별 집중 문제와 회차별 모의고사
+
+## 로컬 개발
+
+```bash
+pnpm install
+pnpm dev
+pnpm build
+pnpm preview
 ```
-pnpm create astro@latest -- --template starlight
-```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 주요 경로
 
-## 🚀 Project Structure
-
-Inside of your Astro + Starlight project, you'll see the following folders and files:
-
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
-```
-
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
-
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
-
-Static assets, like favicons, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+- 문서 본문: `src/content/docs/`
+- 퀴즈 및 모의고사 데이터: `public/data/quiz/`
+- 공통 학습 컴포넌트: `src/components/learning/`
+- 스타일: `src/styles/`
+- 사이트 설정: `astro.config.mjs`
