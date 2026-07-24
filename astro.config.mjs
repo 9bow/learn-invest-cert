@@ -52,7 +52,9 @@ export default defineConfig({
   ],
   markdown: {
     remarkPlugins: [remarkMath],
-    rehypePlugins: [rehypeKatex],
+    rehypePlugins: [[rehypeKatex, {
+      strict: (errorCode) => errorCode === 'unicodeTextInMathMode' ? 'ignore' : 'warn',
+    }]],
   },
   vite: {
     plugins: [tailwindcss()],

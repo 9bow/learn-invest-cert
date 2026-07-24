@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type ReactNode } from 'react';
 
 interface QuizQuestion {
   id: string;
@@ -10,6 +10,56 @@ interface QuizQuestion {
 
 interface QuizProps {
   section: string;
+}
+
+function renderInline(text: string, keyOffset: number): ReactNode[] {
+  const parts: ReactNode[] = [];
+  const inlineCodeRegex = /`([^`]+)`/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  const pushPlain = (plain: string) => {
+    parts.push(
+      <span key={`text-${keyOffset}-${parts.length}`}>
+        {plain.split('\n').flatMap((line, index, lines) =>
+          index < lines.length - 1
+            ? [line, <br key={`br-${keyOffset}-${parts.length}-${index}`} />]
+            : [line],
+        )}
+      </span>,
+    );
+  };
+
+  while ((match = inlineCodeRegex.exec(text)) !== null) {
+    if (match.index > lastIndex) pushPlain(text.slice(lastIndex, match.index));
+    parts.push(<code key={`inline-${keyOffset}-${parts.length}`}>{match[1]}</code>);
+    lastIndex = match.index + match[0].length;
+  }
+  if (lastIndex < text.length) pushPlain(text.slice(lastIndex));
+  return parts;
+}
+
+function renderText(text: string): ReactNode[] {
+  const parts: ReactNode[] = [];
+  const codeBlockRegex = /```(?:\w*)\n([\s\S]*?)```/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = codeBlockRegex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(...renderInline(text.slice(lastIndex, match.index), parts.length));
+    }
+    parts.push(
+      <pre key={`block-${parts.length}`} style={{ overflowX: 'auto' }}>
+        <code>{match[1]}</code>
+      </pre>,
+    );
+    lastIndex = match.index + match[0].length;
+  }
+  if (lastIndex < text.length) {
+    parts.push(...renderInline(text.slice(lastIndex), parts.length));
+  }
+  return parts;
 }
 
 export default function Quiz({ section }: QuizProps) {
@@ -106,7 +156,7 @@ export default function Quiz({ section }: QuizProps) {
         <span>문제 {current + 1} / {questions.length}</span>
         <span>정답: {score}개</span>
       </div>
-      <p style={{ fontWeight: 600, marginBottom: '1rem', color: 'var(--sl-color-white)', lineHeight: 1.6 }}>{q.question}</p>
+      <p style={{ fontWeight: 600, marginBottom: '1rem', color: 'var(--sl-color-white)', lineHeight: 1.6 }}>{renderText(q.question)}</p>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
         {q.options.map((opt, idx) => {
           let bg = 'var(--sl-color-gray-6)';
@@ -128,7 +178,7 @@ export default function Quiz({ section }: QuizProps) {
               onClick={() => handleSelect(idx)}
               style={{ textAlign: 'left', padding: '0.75rem 1rem', background: bg, border, borderRadius: '0.375rem', cursor: answered.has(current) ? 'default' : 'pointer', color: 'var(--sl-color-white)', lineHeight: 1.5 }}
             >
-              {idx + 1}. {opt}
+              {idx + 1}. {renderText(opt)}
             </button>
           );
         })}
@@ -138,7 +188,7 @@ export default function Quiz({ section }: QuizProps) {
           <p style={{ color: selected === q.answer ? '#22c55e' : '#ef4444', fontWeight: 600, marginBottom: '0.5rem' }}>
             {selected === q.answer ? '정답입니다!' : '오답입니다.'}
           </p>
-          <p style={{ color: 'var(--sl-color-gray-2)' }}>{q.explanation}</p>
+          <p style={{ color: 'var(--sl-color-gray-2)' }}>{renderText(q.explanation)}</p>
         </div>
       )}
       {showResult && (
