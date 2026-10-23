@@ -15,6 +15,9 @@ references:
   - title: 한국금융투자협회 투자자산운용사 학습 교재
     url: https://license.kofia.or.kr
     accessed: "2026-03-26"
+  - title: "한국거래소 알고 싶어요 파생상품시장 17쪽 베이시스"
+    url: "https://main.krxverse.co.kr/_contents/ACA/02/02010201/04.pdf"
+    accessed: "2026-10-23"
 ---
 
 import { Aside } from '@astrojs/starlight/components';
@@ -35,10 +38,10 @@ $$F_0 = S_0 \cdot e^{(r-q)T}$$
 
 $$F_0 = S_0 \cdot e^{(r_d - r_f)T}$$
 
-베이시스: $\text{Basis} = S_0 - F_0$
+베이시스: $\text{Basis} = F_0 - S_0$
 
 <Aside type="note">
-베이시스는 현물가격에서 선물가격을 뺀 값입니다. 정상 시장(Contango)에서는 베이시스가 음수이며, 만기가 가까워질수록 0에 수렴합니다(베이시스 소멸).
+이 문서는 한국거래소 기준에 따라 선물가격에서 현물가격을 뺍니다. 콘탱고(선물 > 현물)에서는 베이시스가 양수이며, 만기가 가까워질수록 0에 수렴합니다(베이시스 소멸).
 </Aside>
 
 ### 풋-콜 패리티

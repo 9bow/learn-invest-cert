@@ -30,7 +30,9 @@ references:
 
 정규분포를 가정할 때 VaR 공식은 다음과 같다.
 
-$$VaR = \mu - z_\alpha \cdot \sigma$$
+$$VaR_\alpha = (z_\alpha \sigma - \mu)W$$
+
+$\mu$와 $\sigma$는 같은 보유기간의 수익률 평균과 표준편차이며, $W$는 현재 포트폴리오 가치다. 손실액을 양수로 표시하는 기준이다. $\mu-z_\alpha\sigma$는 하위 수익률 분위수이므로 VaR 손실액과 부호·단위를 구분한다.
 
 단순화하여 평균 수익을 0으로 가정하면:
 
@@ -104,7 +106,7 @@ $$MVaR_i = \frac{\partial VaR_p}{\partial w_i}$$
 
 ### 성분VaR (Component VaR)
 
-포트폴리오 전체 VaR에서 **각 자산이 기여하는 비율** 이다.
+포트폴리오 전체 VaR에 대한 **각 자산의 기여액**이다. 가중치와 포지션 금액 중 어느 변수를 미분하는지에 따라 단위를 일치시켜야 한다.
 
 $$CVaR_i = MVaR_i \cdot w_i$$
 

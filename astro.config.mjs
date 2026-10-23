@@ -37,7 +37,7 @@ export default defineConfig({
         { label: '대안투자 및 해외증권투자', autogenerate: { directory: '08-alternative-overseas' } },
         { label: '투자분석 및 리스크관리', autogenerate: { directory: '09-analysis-risk' } },
         { label: '금융상품 및 세제', autogenerate: { directory: '10-products-tax' } },
-        { label: '실전 모의고사 및 기출문제', autogenerate: { directory: '11-mock-exams' } },
+        { label: '실전 모의고사 및 연습문제', autogenerate: { directory: '11-mock-exams' } },
       ],
       social: [
         {

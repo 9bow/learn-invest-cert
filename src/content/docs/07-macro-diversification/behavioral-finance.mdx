@@ -17,6 +17,12 @@ references:
   - title: 한국금융투자협회 투자자산운용사 학습 교재
     url: https://license.kofia.or.kr
     accessed: "2026-03-26"
+  - title: "Barber and Odean 2001 Boys Will Be Boys"
+    url: "https://faculty.haas.berkeley.edu/odean/Papers%20current%20versions/BoysWillBeBoys.pdf"
+    accessed: "2026-10-23"
+  - title: "Odean 1998 Are Investors Reluctant to Realize Their Losses"
+    url: "https://faculty.haas.berkeley.edu/odean/papers%20current%20versions/areinvestorsreluctant.pdf"
+    accessed: "2026-10-23"
 ---
 
 import { Aside } from '@astrojs/starlight/components';
@@ -49,7 +55,7 @@ Kahneman은 인간의 사고를 두 가지로 구분합니다. **시스템 1**�
 - 포트폴리오 집중화(분산 부족)
 - 위험을 과소평가하고 고위험 자산 편중
 
-**실제 사례**: Barber & Odean(2001) 연구에 따르면 남성 투자자는 여성보다 45% 더 많이 매매했지만, 연간 수익률은 2.65%p 낮았습니다. 과도한 거래가 수익률을 갉아먹는 전형적인 과신 편향의 결과입니다.
+**실제 사례**: Barber & Odean(2001)은 미국 할인증권사 35,000여 가구의 1991~1997년 자료에서 남성이 여성보다 45% 더 많이 거래했다고 보고했습니다. 거래로 인한 연 수익률 감소는 남성 2.65%p, 여성 1.72%p였습니다. 2.65%p를 남녀 간 수익률 차이로 해석해서는 안 됩니다. 이 표본의 결과를 모든 시기·집단에 일반화하지 마십시오.
 
 **과신의 두 가지 형태**:
 - **교정 과신(Miscalibration)**: 불확실성을 과소평가하여 신뢰 구간을 너무 좁게 설정
@@ -70,7 +76,7 @@ $$V = \sum_i \pi(p_i) \cdot v(x_i)$$
 4. 손실의 기울기 > 이익의 기울기 (손실회피 반영)
 
 **투자에 대한 시사점**:
-- 손실 상태에서 회복을 위해 과도한 위험 추구 (도박꾼의 오류)
+- 손실 상태에서 회복을 위해 과도한 위험 추구 (손실 영역의 위험추구 성향)
 - 작은 손실도 크게 느껴져 손절매를 지연
 - 복권(낮은 확률·높은 수익) 과대평가 → 고위험 자산 투기
 
@@ -107,7 +113,7 @@ $$V = \sum_i \pi(p_i) \cdot v(x_i)$$
 2. **Tax-Loss Harvesting** 기회 미활용: 손실을 실현해 세금을 절감하는 전략 포기
 3. 포트폴리오 품질 저하: 상승 가능성 높은 주식을 팔고 하락 가능성 높은 주식을 보유
 
-**Shefrin & Statman(1985)** 연구에 따르면 개인투자자는 손실 주식보다 이익 주식을 약 1.5배 더 빨리 매도하는 경향이 있습니다.
+Shefrin & Statman(1985)은 처분효과를 설명했습니다. Odean(1998)은 10,000개 계좌의 거래에서 손실보다 이익을 실현하려는 선호를 분석했습니다. 실현 비율과 매도까지 걸린 시간은 서로 다른 측정치입니다.
 
 ## 군집행동(Herding)
 

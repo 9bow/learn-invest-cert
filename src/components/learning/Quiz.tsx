@@ -141,7 +141,7 @@ export default function Quiz({ section }: QuizProps) {
           {score} / {questions.length} ({pct}%)
         </p>
         <p style={{ color: 'var(--sl-color-gray-3)' }}>
-          {pct >= 70 ? '합격 기준(70%)을 충족했습니다!' : '합격 기준(70%)에 미달합니다. 복습이 필요합니다.'}
+          {pct >= 70 ? '학습 목표 정답률(70%)을 충족했습니다.' : '학습 목표 정답률(70%)에 미달합니다. 복습이 필요합니다.'}
         </p>
         <button onClick={handleReset} style={{ marginTop: '1rem', padding: '0.5rem 1rem', background: 'var(--sl-color-accent)', color: 'var(--sl-color-black)', border: 'none', borderRadius: '0.25rem', cursor: 'pointer', fontWeight: 600 }}>
           다시 풀기

@@ -19,6 +19,9 @@ references:
   - title: "Leveraged Buyout - Investopedia"
     url: "https://www.investopedia.com/terms/l/leveragedbuyout.asp"
     accessed: "2026-03-26"
+  - title: "CFA Institute 2026 Rates and Returns"
+    url: "https://www.cfainstitute.org/insights/professional-learning/refresher-readings/2026/rates-and-returns"
+    accessed: "2026-10-23"
 ---
 
 ## PEF의 구조: GP와 LP
@@ -97,13 +100,13 @@ PEF 투자 초기에는 운용보수 지출, 인수 비용, 투자 기업의 가
 
 $$\sum_{t=0}^{n} \frac{CF_t}{(1+IRR)^t} = 0$$
 
-IRR은 **시간가중 수익률** 이므로 현금 투입 시점이 중요하다. 단, 현금흐름의 규모를 반영하지 못하는 한계가 있다.
+IRR은 현금흐름의 **규모와 시점을 반영하는 금액가중 수익률**이다. 투자 규모 자체를 나타내는 금액 지표는 아니며, 현금흐름 부호에 따라 복수의 해가 나오거나 해가 없을 수 있다.
 
 ### TVPI (Total Value to Paid-In)
 
-$$TVPI = \frac{\text{분배금(DPI)} + \text{잔존가치(RVPI)}}{\text{납입자본}}$$
+$$TVPI = \frac{\text{누적 분배금} + \text{잔존 평가액}}{\text{납입자본}}$$
 
-납입한 자본 대비 **총 가치(회수액 + 잔존 포트폴리오 평가액)** 배수다. TVPI > 1이면 원금 초과 회수를 의미한다.
+납입한 자본 대비 **총 가치(회수액 + 잔존 포트폴리오 평가액)** 배수다. TVPI > 1이면 미실현 평가액을 포함한 총가치가 납입자본을 넘는다는 뜻이다. 실제 현금으로 원금을 회수했는지는 DPI로 판단한다.
 
 ### DPI (Distributed to Paid-In)
 
@@ -113,6 +116,6 @@ $$DPI = \frac{\text{실제 분배금 합계}}{\text{납입자본}}$$
 
 | 지표 | 의미 | 특징 |
 |------|------|------|
-| **IRR** | 연간 수익률 | 시간 가중, 규모 미반영 |
+| **IRR** | 현금흐름 현재가치가 0인 할인율 | 금액 가중, 투입·회수 시점과 규모 반영 |
 | **TVPI** | 총가치/납입자본 | 미실현 포함 |
 | **DPI** | 분배금/납입자본 | 실현 수익만 반영, 보수적 |
