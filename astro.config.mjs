@@ -51,6 +51,7 @@ export default defineConfig({
     react(),
   ],
   markdown: {
+    gfm: true,
     remarkPlugins: [remarkMath],
     rehypePlugins: [[rehypeKatex, {
       strict: (errorCode) => errorCode === 'unicodeTextInMathMode' ? 'ignore' : 'warn',
